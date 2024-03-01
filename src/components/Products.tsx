@@ -18,7 +18,7 @@ const Products = () => {
 
   return (
     <>
-      <Title Title="Produccts" Link="View" />
+      <Title Title="Products" Link="View" />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-5 lg:gap-5">
         {allProducts
