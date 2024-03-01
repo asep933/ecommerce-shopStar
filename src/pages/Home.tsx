@@ -37,7 +37,7 @@ const Dashboard = (): any => {
 
   return (
     <Case>
-      <div onClick={() => setStatus("non-active")}>
+      <div>
         <section>
           <Hero />
         </section>
