@@ -5,11 +5,13 @@ import CategoryList from "../components/CategoryList";
 import Title from "../components/Title";
 import Hero from "../components/Hero";
 import Products from "../components/Products";
+import Checkout from "../components/Checkout";
 
 const Dashboard = (): any => {
   type Categories = any[];
 
   const [dataCategories, setDataCategories] = useState<Categories>([]);
+  const [status, setStatus] = useState<string>("not-active");
 
   useEffect(() => {
     const fetchingDataCategories = async () => {
@@ -21,9 +23,21 @@ const Dashboard = (): any => {
     fetchingDataCategories();
   }, [dataCategories]);
 
+  // useEffect(() => {
+  //   const product = document.querySelector("#product");
+
+  //   window.addEventListener("click", (e) => {
+  //     return e.target == product ? 0 : setStatus("non-active");
+  //   });
+
+  //   return window.removeEventListener("click", (e) => {
+  //     return e.target == product ? 0 : setStatus("non-active");
+  //   });
+  // }, []);
+
   return (
     <Case>
-      <div>
+      <div onClick={() => setStatus("non-active")}>
         <section>
           <Hero />
         </section>
@@ -41,9 +55,16 @@ const Dashboard = (): any => {
         </section>
       </div>
 
-      <section className="pt-4 pb-16 px-4 bg-slate-50 lg:px-8 lg:pt-20">
-        <Products />
+      <section
+        id="product"
+        className="z-20 pt-4 pb-16 px-4 bg-slate-50 lg:px-8 lg:pt-20"
+      >
+        <Products setStatus={setStatus} />
       </section>
+
+      <div className="">
+        {status === "active" ? <Checkout setStatus={setStatus} /> : ""}
+      </div>
     </Case>
   );
 };

@@ -3,7 +3,7 @@ import ProductList from "./ProductList";
 import Title from "./Title";
 import { useState, useEffect } from "react";
 
-const Products = () => {
+const Products = ({ setStatus }: { setStatus: any }) => {
   const [allProducts, setAllProducts] = useState<any[]>([]);
 
   useEffect(() => {
@@ -18,15 +18,15 @@ const Products = () => {
 
   return (
     <>
-      <Title Title="Produccts" Link="View" />
+      <Title Title="Products" Link="View" />
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-5 lg:gap-5">
         {allProducts
           .map((data) => (
             <ul key={data.id}>
-              <li>
+              <button onClick={() => setStatus("active")}>
                 <ProductList api={data} />
-              </li>
+              </button>
             </ul>
           ))
           .slice(0, 5)}
