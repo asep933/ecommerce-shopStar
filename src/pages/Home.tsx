@@ -62,9 +62,7 @@ const Dashboard = (): any => {
         <Products setStatus={setStatus} />
       </section>
 
-      <div className="">
-        {status === "active" ? <Checkout setStatus={setStatus} /> : ""}
-      </div>
+      {status === "active" ? <Checkout setStatus={setStatus} /> : ""}
     </Case>
   );
 };
