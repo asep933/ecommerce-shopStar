@@ -5,7 +5,7 @@ import ProductList from "./ProductList";
 import Title from "./Title";
 import { useState, useEffect } from "react";
 
-const Products = ({ setStatus }: { setStatus: any }) => {
+const Products = ({ status, setStatus }: { status: any; setStatus: any }) => {
   const [allProducts, setAllProducts] = useState<any[]>([]);
   const [idState, setIdState] = useState<any>(null);
 
@@ -39,7 +39,7 @@ const Products = ({ setStatus }: { setStatus: any }) => {
       <Context.Provider value={idState}>
         <Title Title="Products" Link="View" />
 
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-5 lg:gap-5">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-5 lg:gap-5 px-4 lg:px-8">
           {allProducts
             .map((data) => (
               <button key={data.id} onClick={() => handleButton(data.id)}>
@@ -49,9 +49,7 @@ const Products = ({ setStatus }: { setStatus: any }) => {
             .slice(0, 5)}
         </div>
 
-        <section className="hidden">
-          <Checkout setStatus={""} />
-        </section>
+        {status === "active" && <Checkout id={idState} setStatus={setStatus} />}
       </Context.Provider>
     </>
   );

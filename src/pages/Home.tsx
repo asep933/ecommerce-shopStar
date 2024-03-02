@@ -5,7 +5,7 @@ import CategoryList from "../components/CategoryList";
 import Title from "../components/Title";
 import Hero from "../components/Hero";
 import Products from "../components/Products";
-import Checkout from "../components/Checkout";
+// import Checkout from "../components/Checkout";
 // import { useContextId } from "../hook/contextId";
 
 const Dashboard = (): any => {
@@ -57,14 +57,11 @@ const Dashboard = (): any => {
         </section>
       </div>
 
-      <section
-        id="product"
-        className="z-20 pt-4 pb-16 px-4 bg-slate-50 lg:px-8 lg:pt-20"
-      >
-        <Products setStatus={setStatus} />
+      <section id="product" className="z-20 pt-4 pb-16  bg-slate-50 lg:pt-20">
+        <Products status={status} setStatus={setStatus} />
       </section>
 
-      {status === "active" ? <Checkout setStatus={setStatus} /> : ""}
+      {/* {status === "active" ? <Checkout id={2} setStatus={setStatus} /> : ""} */}
     </Case>
   );
 };

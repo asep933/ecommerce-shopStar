@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 import { ShoppingCart } from "@phosphor-icons/react";
 import Basket from "./Basket";
 import { useEffect, useState } from "react";
-import getProductById from "../api/getProductById";
+// import getProductById from "../api/getProductById";
+import getAllProducts from "../api/getAllProducts";
 
 const Navbar = (): any => {
   const [basket, setBasket] = useState<boolean>(false);
-  const [data, setData] = useState<any>({});
+  const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
     const getData = async () => {
-      const res = await getProductById(4);
+      const res = await getAllProducts();
       return setData(res);
     };
 

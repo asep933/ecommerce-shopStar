@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import getProductById from "../api/getProductById";
 import Quantity from "./Quantity";
 import { X } from "@phosphor-icons/react";
-import { useContextId } from "../hook/contextId";
+// import { useContextId } from "../hook/contextId";
 
-const Checkout = ({ setStatus }: { setStatus: any }) => {
+const Checkout = ({ id, setStatus }: { id: number; setStatus: any }) => {
   const [dataById, setDataById] = useState<any>({});
-  const id = useContextId();
+  // const id = useContextId();
 
   useEffect(() => {
     const fetchById = async () => {
