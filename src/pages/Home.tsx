@@ -6,12 +6,14 @@ import Title from "../components/Title";
 import Hero from "../components/Hero";
 import Products from "../components/Products";
 import Checkout from "../components/Checkout";
+import { useContextId } from "../hook/contextId";
 
 const Dashboard = (): any => {
   type Categories = any[];
 
   const [dataCategories, setDataCategories] = useState<Categories>([]);
   const [status, setStatus] = useState<string>("not-active");
+  const id = useContextId();
 
   useEffect(() => {
     const fetchingDataCategories = async () => {

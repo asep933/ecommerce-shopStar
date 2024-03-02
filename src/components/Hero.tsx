@@ -12,7 +12,7 @@ const Hero = () => {
         font-bold text-white mx-4 lg:mx-32 drop-shadow-md lg:text-lg text-base space-y-4"
       >
         <h2 className="text-4xl lg:text-6xl">
-          Mega <span className="text-accent">Sale</span>
+          Big <span className="text-accent">Sale</span>
         </h2>
         <p>
           Belanja di shopStar daptkan Diskon melimpah, daptkan diskon hingga 99%

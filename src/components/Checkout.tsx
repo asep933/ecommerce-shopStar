@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import getProductById from "../api/getProductById";
 import Quantity from "./Quantity";
 import { X } from "@phosphor-icons/react";
+import { useContextId } from "../hook/contextId";
 
-const Checkout = ({ setStatus }: { setStatus: any }): any => {
+const Checkout = ({ setStatus }: { setStatus: any }) => {
   const [dataById, setDataById] = useState<any>({});
+  const id = useContextId();
 
   useEffect(() => {
     const fetchById = async () => {
-      const res = await getProductById(1);
-      return setDataById(res);
+      const res = await getProductById(id);
+      setDataById(res);
     };
     fetchById();
-  }, [dataById]);
+  }, [id]);
 
   return (
     <div className="z-10 bg-transparent fixed w-full h-screen bottom-0">
@@ -44,7 +46,7 @@ const Checkout = ({ setStatus }: { setStatus: any }): any => {
           </div>
         </div>
 
-        <div className="px-16">
+        <div className="px-16 mt-3">
           <button
             className="rounded-md text-lg mt-4 w-full text-center
           hover:bg-opacity-85 bg-secondary outline-secondary
