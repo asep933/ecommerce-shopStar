@@ -19,7 +19,7 @@ const Checkout = ({ id, setStatus }: { id: number; setStatus: any }) => {
   return (
     <div className="z-10 bg-transparent fixed w-full h-screen bottom-0">
       <div
-        className="bottom-0 px-4 py-12 absolute drop-shadow-lg rounded-3xl bg-slate-200 w-full 
+        className="bottom-0 px-4 py-12 absolute drop-shadow-lg rounded-t-3xl bg-slate-200 w-full 
       lg:mx-auto lg:w-1/2 h-1/2 lg:translate-x-1/2"
       >
         <h1 className="text-lg font-bold mx-4">Order</h1>
