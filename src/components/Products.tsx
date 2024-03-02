@@ -3,7 +3,7 @@ import { Context } from "../hook/contextId";
 import Checkout from "./Checkout";
 import ProductList from "./ProductList";
 import Title from "./Title";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 
 const Products = ({ setStatus }: { setStatus: any }) => {
   const [allProducts, setAllProducts] = useState<any[]>([]);
