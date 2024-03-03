@@ -4,7 +4,7 @@ const Basket = ({ data }: { data: any }) => {
   return (
     <>
       <div
-        className="h-screen fixed py-4 drop-shadow-md px-3 lg:px-8 w-1/2
+        className="h-screen fixed py-4 drop-shadow-md px-3 lg:px-8 w-10/12
       overflow-auto lg:w-1/4 md:w-1/3 bg-slate-100 top-14 z-30 right-0"
       >
         {data
